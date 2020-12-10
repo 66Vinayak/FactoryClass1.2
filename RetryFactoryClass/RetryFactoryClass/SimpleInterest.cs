@@ -13,10 +13,10 @@ namespace RetryFactoryClass
     class SimpleInterest : IfactoryInterest
     {
         double amount;
-        int years;
-        float roi;
+        double years;
+        double roi;
         
-        public SimpleInterest(double amount, int years, float roi)
+        public SimpleInterest(double amount, double years, double roi)
         {
             this.amount = amount;
             this.years = years;
