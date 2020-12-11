@@ -16,12 +16,12 @@ namespace RetryFactoryClass
         double years;
         double roi;
         
-        public SimpleInterest(double amount, double years, double roi)
+        public SimpleInterest(Dictionary<string, double> SiDictionary)
         {
-            this.amount = amount;
-            this.years = years;
-            this.roi = roi;
-           
+            this.amount = SiDictionary["amount"];
+            this.years = SiDictionary["years"];
+            this.roi = SiDictionary["rateOfIntrest"];
+
         }
         public double Interest()
         {

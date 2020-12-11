@@ -16,12 +16,12 @@ namespace RetryFactoryClass
         double years;
         double roi;
         double annualCompound;
-        public CompoundInterest(double amount, double years, double roi, double annualCompound)
+        public CompoundInterest(Dictionary<string, double> CiDictionary)
             {
-            this.amount = amount;
-            this.years = years;
-            this.roi = roi;
-            this.annualCompound = annualCompound;
+            this.amount = CiDictionary["amount"];
+            this.years = CiDictionary["years"];
+            this.roi = CiDictionary["rateOfIntrest"];
+            this.annualCompound = CiDictionary["annualCompound"];
         }
         public double Interest()
         {

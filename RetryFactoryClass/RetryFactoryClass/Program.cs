@@ -7,15 +7,15 @@ using System.Collections.Generic;
 
 namespace RetryFactoryClass
 {
-    
-    class Program
-    {
-        enum InterstType
+    public enum InterstType
     {
         SimpleIntrest,
         CompoundIntrest
 
     }
+    class Program
+    {
+     
         static void Main(string[] args)
         {
             try
@@ -43,7 +43,7 @@ namespace RetryFactoryClass
                     Valuespair.Add("amount", amount);
                     Valuespair.Add("years", years);
                     Valuespair.Add("rateOfIntrest", rateOfIntrest);
-                    var siObject = FactoryClass.GetIntrest(Valuespair, (int)InterstType.SimpleIntrest);
+                    var siObject = FactoryClass.GetIntrest(Valuespair, InterstType.SimpleIntrest);
                     var siResult = siObject.Interest();
                     Console.Write("Simple Intrest is " + siResult);
                 }
@@ -71,7 +71,7 @@ namespace RetryFactoryClass
                     Valuespair.Add("years", years);
                     Valuespair.Add("rateOfIntrest", rateOfIntrest);
                     Valuespair.Add("annualCompound", annualCompound);
-                    var CiObject = FactoryClass.GetIntrest(Valuespair, (int)InterstType.CompoundIntrest);
+                    var CiObject = FactoryClass.GetIntrest(Valuespair, InterstType.CompoundIntrest);
                     var ciResult = CiObject.Interest();
                     Console.Write("After " + years + " years there will be a " + ciResult + " in the Account");
 

@@ -10,14 +10,14 @@ namespace RetryFactoryClass
 {
    public static class FactoryClass
     {
-        public static IfactoryInterest GetIntrest(Dictionary<string,double> valuee,int choose)
+        public static IfactoryInterest GetIntrest(Dictionary<string,double> valuee, InterstType choose)
         {
             switch (choose)
             {
-                case 0:
-                    return new SimpleInterest(valuee["amount"], valuee["years"], valuee["rateOfIntrest"]);
-                case 1:
-                    return new CompoundInterest(valuee["amount"], valuee["years"], valuee["rateOfIntrest"], valuee["annualCompound"]);
+                case InterstType.SimpleIntrest:
+                    return new SimpleInterest(valuee);
+                case InterstType.CompoundIntrest:
+                    return new CompoundInterest(valuee);
                 default:
                     throw new ApplicationException(string.Format(" Object Intrest cannot be created"));
             }
